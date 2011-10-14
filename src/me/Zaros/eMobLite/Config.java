@@ -24,6 +24,17 @@ public class Config {
 		ConfigSet();
 	}
 	
+/*	public static void DragonTrue() {
+		CONFIG.setProperty("Allow Dragon", true);
+		ConfigSet();
+	}
+		
+	public static void DragonFalse() {
+		CONFIG.setProperty("Allow Dragon", false);
+		ConfigSet();
+	}
+*/
+	
 	public static void EndermenTrue() {
 		CONFIG.setProperty("Allow Enderman", true);
 		ConfigSet();
@@ -117,6 +128,7 @@ public class Config {
 	public static void AllTrue() {
 		CreeperTrue();
 		CSpiderTrue();
+		//DragonTrue();
 		EndermenTrue();
 		GhastTrue();
 		GiantTrue();
@@ -131,6 +143,7 @@ public class Config {
 	public static void AllFalse() {
 		CreeperFalse();
 		CSpiderFalse();
+		//DragonFalse();
 		EndermenFalse();
 		GhastFalse();
 		GiantFalse();

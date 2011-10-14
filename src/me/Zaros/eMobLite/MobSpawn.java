@@ -34,6 +34,16 @@ public class MobSpawn extends EntityListener {
 			}
 		}
 	
+		//Dragon
+/*		if (event.getCreatureType() == CreatureType.DRAGON) {
+			if (event.getSpawnReason() == SpawnReason.NATURAL) {
+				if ((CONFIG.getBoolean("Allow Dragon", true)) == false) {				
+					event.setCancelled(true);
+				}
+			}
+		}		
+*/	
+		
 		//Enderman
 		if (event.getCreatureType() == CreatureType.ENDERMAN) {
 			if (event.getSpawnReason() == SpawnReason.NATURAL) {

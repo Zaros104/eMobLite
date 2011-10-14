@@ -7,6 +7,8 @@ public class List {
 	static String MSGCreepF = "- " + ChatColor.RED + "Creeper";
 	static String MSGCSpidT = "- " + ChatColor.GREEN + "Cave Spider";
 	static String MSGCSpidF = "- " + ChatColor.RED + "Cave Spider";
+	//static String MSGDragonT = "- " + ChatColor.Red + "Dragon";
+	//static String MSGDragonF = "- " + ChatColor.Red + "Dragon";		
 	static String MSGEnderT = "- " + ChatColor.GREEN + "Enderman";
 	static String MSGEnderF = "- " + ChatColor.RED + "Enderman";
 	static String MSGGhastT = "- " + ChatColor.GREEN + "Ghast";
@@ -25,4 +27,5 @@ public class List {
 	static String MSGSquidF = "- " + ChatColor.RED + "Squid";
 	static String MSGZombieT = "- " + ChatColor.GREEN + "Zombie";
 	static String MSGZombieF = "- " + ChatColor.RED + "Zombie";
+
 }

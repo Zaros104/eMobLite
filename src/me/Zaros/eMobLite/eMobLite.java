@@ -52,6 +52,8 @@ public class eMobLite extends JavaPlugin {
 		CONFIG.save();
 		CONFIG.setProperty("Allow Cave Spider", true);
 		CONFIG.save();
+//		CONFIG.setProperty("Allow Dragon", true);
+//		CONFIG.save();
 		CONFIG.setProperty("Allow Enderman", true);
 		CONFIG.save();
 		CONFIG.setProperty("Allow Ghast", true);

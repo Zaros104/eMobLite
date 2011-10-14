@@ -29,6 +29,7 @@ public class mobCMD implements CommandExecutor {
 							sender.sendMessage(ChatColor.YELLOW + "##########-Mob List-###########)");
 							Boolean AllowCreep = CONFIG.getBoolean("Allow Creeper", true);
 							Boolean AllowCSpider = CONFIG.getBoolean("Allow Cave Spider", true);
+							//Boolean AllowDragon = CONFIG.getBoolean("Allow Dragon", true);
 							Boolean AllowEnder = CONFIG.getBoolean("Allow Enderman", true);
 							Boolean AllowGhast = CONFIG.getBoolean("Allow Ghast", true);
 							Boolean AllowGiant = CONFIG.getBoolean("Allow Giant", true);
@@ -48,6 +49,13 @@ public class mobCMD implements CommandExecutor {
 								sender.sendMessage(MSGCSpidT);
 							} else
 								sender.sendMessage(MSGCSpidF);
+							
+							//Future dragon code
+							//
+							//if (AllowDragon == true) {
+							//	sender.sendMessage(MSGDragonT);
+							//} else
+							//	sender.sendMessage(MSGDragonF);
 
 							if (AllowEnder == true) {
 								sender.sendMessage(MSGEnderT);
@@ -79,7 +87,7 @@ public class mobCMD implements CommandExecutor {
 							} else
 								sender.sendMessage(MSGSlimeF);
 
-						if (AllowSpider == true) {
+							if (AllowSpider == true) {
 								sender.sendMessage(MSGSpiderT);
 							} else
 								sender.sendMessage(MSGSpiderF);
@@ -92,7 +100,7 @@ public class mobCMD implements CommandExecutor {
 							if (AllowZombie == true) {
 								sender.sendMessage(MSGZombieT);
 							} else
-								sender.sendMessage(MSGZombieF);
+								sender.sendMessage(MSGZombieF);						
 						
 							return true;
 						} else sender.sendMessage(ChatColor.RED + "You do not have permission to do this.");
@@ -135,7 +143,23 @@ public class mobCMD implements CommandExecutor {
 							return true;
 						}
 					}
-
+					
+/*					Future dragon command code
+ 
+					if (args[0].equalsIgnoreCase("dragon")) {
+						if (args[1].equalsIgnoreCase("true")) {
+							CSpiderTrue();
+							sender.sendMessage(ChatColor.GREEN + "Dragon enabled!");
+							return true;
+						}
+						if (args[1].equalsIgnoreCase("false")) {
+							CSpiderFalse();
+							sender.sendMessage(ChatColor.RED + "Dragon disabled!");
+							return true;
+						}
+					}
+*/
+					
 					if (args[0].equalsIgnoreCase("endermen")) {
 						if (args[1].equalsIgnoreCase("true")) {
 							EndermenTrue();
