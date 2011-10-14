@@ -103,19 +103,18 @@ public class mobCMD implements CommandExecutor {
 								sender.sendMessage(MSGZombieF);						
 						
 							return true;
-						} else sender.sendMessage(ChatColor.RED + "You do not have permission to do this.");
+						}
 					}else sender.sendMessage("This is not enabled for console.");
 				}// for arg[0].equals("list")
-				if (args[0].equalsIgnoreCase("help")); {
+				else if (args[0].equalsIgnoreCase("help")); {
 					if ((sender.isOp()) || sender.hasPermission("emoblite.help")) {
 						sender.sendMessage(ChatColor.GREEN + "##########-Mob Help-###########");
 						sender.sendMessage("Type '/mob <mobname> <true|false>' to enable and disable mobs");
 						sender.sendMessage("Type '/mob list' for a list of mobs");
 						return true;
-					} else
-						sender.sendMessage(ChatColor.RED + "You do not have permission to do this.");
-				}// for arg[0].equals("help")
-			}// for args.length == 1
+					} else sender.sendMessage(ChatColor.RED + "You do not have permission to do this.");
+				} // for arg[0].equals("help")
+			} // for args.length == 1
 			if (args.length >= 2) {
 				if ((sender.isOp()) || sender.hasPermission("emoblite.mobs")) {
 					if (args[0].equalsIgnoreCase("creeper")) {
@@ -292,6 +291,6 @@ public class mobCMD implements CommandExecutor {
 				}else sender.sendMessage(ChatColor.RED + "You do not have permission to do this.");
 			}
 		}// for mob command
-		return false;
+		return true;
 	}
 }
