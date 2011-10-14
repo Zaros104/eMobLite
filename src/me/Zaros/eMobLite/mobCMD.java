@@ -25,7 +25,7 @@ public class mobCMD implements CommandExecutor {
 			if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("list")) {
 					if (sender instanceof Player){
-						if ((sender.isOp()) || sender.hasPermission("eMobLite.list")) {
+						if ((sender.isOp()) || sender.hasPermission("emoblite.list")) {
 							sender.sendMessage(ChatColor.YELLOW + "##########-Mob List-###########)");
 							Boolean AllowCreep = CONFIG.getBoolean("Allow Creeper", true);
 							Boolean AllowCSpider = CONFIG.getBoolean("Allow Cave Spider", true);
@@ -107,7 +107,7 @@ public class mobCMD implements CommandExecutor {
 					}else sender.sendMessage("This is not enabled for console.");
 				}// for arg[0].equals("list")
 				if (args[0].equalsIgnoreCase("help")); {
-					if ((sender.isOp()) || sender.hasPermission("eMobLite.help")) {
+					if ((sender.isOp()) || sender.hasPermission("emoblite.help")) {
 						sender.sendMessage(ChatColor.GREEN + "##########-Mob Help-###########");
 						sender.sendMessage("Type '/mob <mobname> <true|false>' to enable and disable mobs");
 						sender.sendMessage("Type '/mob list' for a list of mobs");
@@ -117,7 +117,7 @@ public class mobCMD implements CommandExecutor {
 				}// for arg[0].equals("help")
 			}// for args.length == 1
 			if (args.length >= 2) {
-				if ((sender.isOp()) || sender.hasPermission("eMobLite.mobs")) {
+				if ((sender.isOp()) || sender.hasPermission("emoblite.mobs")) {
 					if (args[0].equalsIgnoreCase("creeper")) {
 						if (args[1].equalsIgnoreCase("true")) {
 							CreeperTrue();
