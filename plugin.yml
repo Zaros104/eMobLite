@@ -1,0 +1,25 @@
+name: eMobLite
+version: 0.5.3
+author: Zaros
+main: me.Zaros.eMobLite.eMobLite
+commands:
+  mob:
+    description: 'Enable and disable mobs'
+    usage: 'Usage: /mob <mobname> <true|false>'
+    aliases: []
+permissions:
+    emoblite.*:
+        description: Complete access to eMobLite
+        children:
+            emoblite.list: true
+            emoblite.help: true
+            emoblite.mobs: true
+    emoblite.list:
+        description: Allows you to use the mob list command
+        default: op
+    emoblite.help:
+        description: Allows you to use the mob help command
+        default: op
+    emoblite.mobs:
+        description: Allows you to use the mob control commands
+        default: op
