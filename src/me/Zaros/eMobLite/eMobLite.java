@@ -35,6 +35,7 @@ public class eMobLite extends JavaPlugin {
 			new File(getDataFolder().toString()).mkdir();
 			getConfig().options().copyDefaults(true);
 			saveConfig();
+			CONFIG = getConfig();
 		}
 	}	
 }
