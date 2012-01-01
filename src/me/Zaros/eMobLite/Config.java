@@ -1,134 +1,137 @@
 package me.Zaros.eMobLite;
 
 import static me.Zaros.eMobLite.eMobLite.CONFIG;
+import java.io.IOException;
+import org.bukkit.configuration.InvalidConfigurationException;
 
 public class Config {
 	
+	
 	public static void CreeperTrue() {
-		CONFIG.setProperty("Allow Creeper", true);
+		CONFIG.set("Allow Creeper", true);
 		ConfigSet();
 	}
 	
 	public  static void CreeperFalse() {
-		CONFIG.setProperty("Allow Creeper", false);
+		CONFIG.set("Allow Creeper", false);
 		ConfigSet();
 	}
 	
 	public static void CSpiderTrue() {
-		CONFIG.setProperty("Allow Cave Spider", true);
+		CONFIG.set("Allow Cave Spider", true);
 		ConfigSet();
 	}
 		
 	public static void CSpiderFalse() {
-		CONFIG.setProperty("Allow Cave Spider", false);
+		CONFIG.set("Allow Cave Spider", false);
 		ConfigSet();
 	}
 	
-/*	public static void DragonTrue() {
-		CONFIG.setProperty("Allow Dragon", true);
+	public static void DragonTrue() {
+		CONFIG.set("Allow Dragon", true);
 		ConfigSet();
 	}
 		
 	public static void DragonFalse() {
-		CONFIG.setProperty("Allow Dragon", false);
+		CONFIG.set("Allow Dragon", false);
 		ConfigSet();
 	}
-*/
+
 	
 	public static void EndermenTrue() {
-		CONFIG.setProperty("Allow Enderman", true);
+		CONFIG.set("Allow Enderman", true);
 		ConfigSet();
 	}
 	
 	public static void EndermenFalse() {
-		CONFIG.setProperty("Allow Enderman", false);
+		CONFIG.set("Allow Enderman", false);
 		ConfigSet();
 	}
 	
 	public static void GhastTrue() {
-		CONFIG.setProperty("Allow Ghast", true);
+		CONFIG.set("Allow Ghast", true);
 		ConfigSet();
 	}
 	
 	public static void GhastFalse() {
-		CONFIG.setProperty("Allow Ghast", false);
+		CONFIG.set("Allow Ghast", false);
 		ConfigSet();
 	}
 	
 	public static void GiantTrue() {
-		CONFIG.setProperty("Allow Giant", true);
+		CONFIG.set("Allow Giant", true);
 		ConfigSet();
 	}
 	
 	public static void GiantFalse() {
-		CONFIG.setProperty("Allow Giant", false);
+		CONFIG.set("Allow Giant", false);
 		ConfigSet();
 	}
 	
 	public  static void SFishTrue() {
-		CONFIG.setProperty("Allow Silverfish", true);
+		CONFIG.set("Allow Silverfish", true);
 		ConfigSet();
 	}
 	
 	public  static void SFishFalse() {
-		CONFIG.setProperty("Allow Silverfish", false);
+		CONFIG.set("Allow Silverfish", false);
 		ConfigSet();
 	}
 	
 	public static void SkeletonTrue() {
-		CONFIG.setProperty("Allow Skeleton", true);
+		CONFIG.set("Allow Skeleton", true);
 		ConfigSet();
 	}
 	
 	public static void SkeletonFalse() {
-		CONFIG.setProperty("Allow Skeleton", false);
+		CONFIG.set("Allow Skeleton", false);
 		ConfigSet();
 	}
 	
 	public static void SlimeTrue() {
-		CONFIG.setProperty("Allow Slime", true);
+		CONFIG.set("Allow Slime", true);
 		ConfigSet();
 	}
 	
 	public static void SlimeFalse() {
-		CONFIG.setProperty("Allow Slime", false);
+		CONFIG.set("Allow Slime", false);
 		ConfigSet();
 	}
 	
 	public static void SpiderTrue() {
-		CONFIG.setProperty("Allow Spider", true);
+		CONFIG.set("Allow Spider", true);
 		ConfigSet();
 	}
 	
 	public static void SpiderFalse() {
-		CONFIG.setProperty("Allow Spider", false);
+		CONFIG.set("Allow Spider", false);
 		ConfigSet();
 	}
 	
 	public static void SquidTrue() {
-		CONFIG.setProperty("Allow Squid", true);
+		CONFIG.set("Allow Squid", true);
 		ConfigSet();
 	}
 	
 	public static void SquidFalse() {
-		CONFIG.setProperty("Allow Squid", false);
+		CONFIG.set("Allow Squid", false);
 		ConfigSet();
 	}
 	
 	public static void ZombieTrue() {
-		CONFIG.setProperty("Allow Zombie", true);
+		CONFIG.set("Allow Zombie", true);
 		ConfigSet();
 	}
 	
 	public static void ZombieFalse() {
-		CONFIG.setProperty("Allow Zombie", false);
+		CONFIG.set("Allow Zombie", false);
 		ConfigSet();
 	}
 	
 	public static void AllTrue() {
 		CreeperTrue();
 		CSpiderTrue();
-		//DragonTrue();
+		DragonTrue();
 		EndermenTrue();
 		GhastTrue();
 		GiantTrue();
@@ -143,7 +146,7 @@ public class Config {
 	public static void AllFalse() {
 		CreeperFalse();
 		CSpiderFalse();
-		//DragonFalse();
+		DragonFalse();
 		EndermenFalse();
 		GhastFalse();
 		GiantFalse();
@@ -156,7 +159,17 @@ public class Config {
 	}
 	
 	public static void ConfigSet() {
-		CONFIG.save();
-		CONFIG.load();
+		try {
+			CONFIG.save("config.yml");
+			CONFIG.load("config.yml");
+		}
+		catch (IOException IOex) {
+			System.out.println("[eMob Lite] - Error! Cannot load eMob config!");
+			IOex.printStackTrace();
+		}
+		catch (InvalidConfigurationException ICEex) {
+			System.out.println("[eMob Lite] - Error! Cannot load eMob config!");
+			ICEex.printStackTrace();
+		}
 	}
 }
