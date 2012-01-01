@@ -1,5 +1,9 @@
 package me.Zaros.eMobLite;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.entity.CreatureType;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityListener;
@@ -17,6 +21,18 @@ public class MobSpawn extends EntityListener {
 	public void onCreatureSpawn(CreatureSpawnEvent event) {
 		if (event.getSpawnReason() == SpawnReason.NATURAL){
 			if (event.getCreatureType() == CreatureType.CREEPER) {
+				try {
+					CONFIG.load("config.yml");
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InvalidConfigurationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				if ((CONFIG.getBoolean("Allow Creeper", true)) == false) {		
 					event.setCancelled(true);
 				}
